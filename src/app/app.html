@@ -1,0 +1,17 @@
+<main>
+    <growl-notifications></growl-notifications>
+
+    <div id="dashboard-notifications" ng-controller="dashboardNotificationsCtrl">
+        <div ng-repeat="(id, notification) in dashboardNotifications track by id">
+            <!--            <growl-notification class="dashboard-note-{{notification.notificationType}}">
+                            {{notification.notification}}
+                        </growl-notification>-->
+            <growl-notification class="alert alert-{{notification.notificationType}}" role="alert">
+                {{notification.notification}}
+            </growl-notification>
+        </div>
+    </div>
+</main>
+<footer>
+    <a ng-href="{{app.url}}">Webpack Angular Starter</a>
+</footer>

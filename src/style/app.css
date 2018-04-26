@@ -1,0 +1,67 @@
+main {
+    padding: 1em;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+    margin-top: 50px;
+    display: block;
+}
+
+footer {
+    text-align: center;
+    font-size: 0.8em;
+}
+
+#modalBody .modal-dialog {
+    max-width: 75%;
+}
+
+.modal-header {
+    font-size: xx-large;
+}
+
+growl-notifications {
+    position: fixed;
+    top: 150px;
+    right: 10px;
+    z-index: 1000;
+}
+
+growl-notifications growl-notification {
+    padding: 15px 30px;
+    width: 200px;
+    display: block;
+}
+
+#sidebar {
+    min-width: 250px;
+    max-width: 250px;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    /* top layer */
+    z-index: 9999;
+}
+
+.nav-overlay {
+    /* full screen */
+    width: 100vw;
+    height: 100vh;
+    /* transparent black */
+    background: rgba(0, 0, 0, 0.8);
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: none;
+    /* middle layer, i.e. appears below the sidebar */
+    z-index: 9998;
+}
+
+#sidebar > #dismiss {
+    width: 35px;
+    height: 35px;
+    position: absolute;
+    /* top right corner of the sidebar */
+    top: 10px;
+    right: 10px;
+}

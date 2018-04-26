@@ -1,0 +1,16 @@
+<table ng-table="$ctrl.tableParams" class="table table-condensed table-bordered table-striped">
+    <tr ng-repeat="item in $data">
+        <td data-title="'Build Number'" filter="{ circle_build_number: 'text'}" sortable="'circle_build_number'">
+            {{item.circle_build_number}}</td>
+        <td data-title="'Git Hash'">
+            {{item.git_hash}}</td>
+        <td data-title="'Environment'">
+            {{item.run_env}}</td>
+        <td data-title="'Color'">
+            {{item.color}}</td>
+        <td data-title="'Service'">
+            {{item.service_name}}</td>
+        <td data-title="'Git Hash'" filter="{ task_definition_version: 'text' }" sortable="'task_definition_version'">
+            {{item.task_definition_version}}</td>
+    </tr>
+</table>
