@@ -1,7 +1,7 @@
 {
-  "name": "angular-webpack-workflow",
-  "version": "1.1.0",
-  "description": "A workflow for Angular made with Webpack",
+  "name": "MyPlayground",
+  "version": "0.1.0",
+  "description": "Just a playground",
   "scripts": {
     "build": "rimraf dist && webpack --bail --progress --profile",
     "server": "webpack-dev-server --history-api-fallback --inline --progress",
