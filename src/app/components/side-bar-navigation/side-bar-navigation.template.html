@@ -1,6 +1,6 @@
-<nav id="sidebar">
-    <div id="dismiss">
-        <i class="far fa-angle-left"></i>
+<nav id="sidebar" ng-style="$ctrl.sidebarPosition">
+    <div id="dismiss" ng-click="$ctrl.closeSidebar()">
+        <i class="fa fa-arrow-left"></i>
     </div>
 
     <div class="sidebar-header">
@@ -10,7 +10,7 @@
     <ul class="list-unstyled">
         <li class="active"><a href="/">Home</a></li>
         <li>
-            <a href="#deploymentMenu" data-toggle="deploymentMenu">DEPLOYMENTS</a>
+            <a href="#deploymentMenu" data-toggle="collapse">DEPLOYMENTS</a>
             <ul class="collapse list-unstyled" id="deploymentMenu">
                 <li><a href="/deployments/canary">Canary</a></li>
             </ul>

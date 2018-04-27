@@ -1,5 +1,9 @@
 <main>
+    <side-bar-navigation is-open="app.openNavigation"></side-bar-navigation>
+
     <growl-notifications></growl-notifications>
+
+    <button type="button" class="btn btn-primary" ng-click="app.openNav()">Navigation</button>
 
     <div id="dashboard-notifications" ng-controller="dashboardNotificationsCtrl">
         <div ng-repeat="(id, notification) in dashboardNotifications track by id">

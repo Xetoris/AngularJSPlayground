@@ -10,6 +10,7 @@ import 'angular-chart.js/dist/angular-chart.min.js';
 import ngTable from 'ng-table/bundles/ng-table';
 import growlNotifications from 'angular-growl-notifications/dist/angular-growl-notifications.min.js';
 import contentModal from './directives/content-modal/content-modal.directive';
+import sideBarNavigation from './components/side-bar-navigation/side-bar-navigation.component';
 import deployGauge from './components/deploy-gauge/deploy-gauge.component';
 import deployModal from './components/deploy-modal/deploy-modal.component';
 import dashboardNotifications from './directives/dashboard-notifications/dashboard-notifications.controller';
@@ -29,6 +30,12 @@ class AppCtrl {
         this.gaugeBackground = '#62cb31';
         this.url = 'https://github.com/preboot/angular-webpack';
         this.selectedHash = '';
+        this.openNavigation = false;
+    }
+
+    openNav() {
+        this.openNavigation = true;
+        console.log("Open Navigation: " + this.openNavigation);
     }
 
     incrementGauage() {
@@ -56,6 +63,7 @@ angular.module(MODULE_NAME, ["ngTable",
     deployGauge,
     deployModal,
     contentModal,
+    sideBarNavigation,
     dashboardNotifications])
     .directive('app', app)
     .controller('AppCtrl', AppCtrl);

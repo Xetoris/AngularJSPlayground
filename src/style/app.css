@@ -38,7 +38,6 @@ growl-notifications growl-notification {
     height: 100vh;
     position: fixed;
     top: 0;
-    left: 0;
     /* top layer */
     z-index: 9999;
 }
