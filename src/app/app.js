@@ -4,6 +4,7 @@ import '../style/app.css';
 
 import 'bootstrap/dist/js/bootstrap.bundle.js';
 import angular from 'angular';
+import ngAnimate from 'angular-animate';
 
 import 'angularjs-gauge/dist/angularjs-gauge.min.js';
 import 'angular-chart.js/dist/angular-chart.min.js';
@@ -14,6 +15,7 @@ import sideBarNavigation from './components/side-bar-navigation/side-bar-navigat
 import deployGauge from './components/deploy-gauge/deploy-gauge.component';
 import deployModal from './components/deploy-modal/deploy-modal.component';
 import dashboardNotifications from './directives/dashboard-notifications/dashboard-notifications.controller';
+import notificationService from './services/notification-service/notification-service';
 
 let app = () => {
     return {
@@ -24,18 +26,25 @@ let app = () => {
 };
 
 class AppCtrl {
-    constructor() {
+    constructor(notificationService) {
         this.gaugeValue = 10;
         this.gaugeForeground = '#3498db';
         this.gaugeBackground = '#62cb31';
         this.url = 'https://github.com/preboot/angular-webpack';
         this.selectedHash = '';
-        this.openNavigation = false;
+        this.isOpen = false;
+        this.notificationService = notificationService;
     }
 
     openNav() {
-        this.openNavigation = true;
-        console.log("Open Navigation: " + this.openNavigation);
+        this.isOpen = true;
+        console.log("Navigation State: " + this.isOpen);
+    }
+
+    setNavState(newState) {
+        console.log("Passed State: " + newState.isOpen);
+        this.isOpen = newState.isOpen;
+        console.log("Navigation State: " + this.isOpen);
     }
 
     incrementGauage() {
@@ -50,13 +59,14 @@ class AppCtrl {
     }
 
     notify(message) {
-        $scope.dashboardNotify(message, 'danger');
+        this.notificationService.addNotification(message, 'warning');
     }
 }
 
 const MODULE_NAME = 'my-playground';
 
-angular.module(MODULE_NAME, ["ngTable",
+angular.module(MODULE_NAME, [ "ngAnimate",
+    "ngTable",
     "growlNotifications",
     "chart.js",
     "angularjs-gauge",
@@ -64,8 +74,9 @@ angular.module(MODULE_NAME, ["ngTable",
     deployModal,
     contentModal,
     sideBarNavigation,
-    dashboardNotifications])
+    dashboardNotifications,
+    notificationService])
     .directive('app', app)
-    .controller('AppCtrl', AppCtrl);
+    .controller('AppCtrl', ['notificationService', AppCtrl]);
 
 export default MODULE_NAME;

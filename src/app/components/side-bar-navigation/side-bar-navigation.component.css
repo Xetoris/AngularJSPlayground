@@ -1,0 +1,88 @@
+#sidebar {
+    min-width: 250px;
+    max-width: 250px;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    background-color: #262262;
+    color: #FFF;
+    /* top layer */
+    z-index: 100;
+    text-align: left;
+}
+
+#sidebar li.active {
+    background-color: rgba(31,27,79,.5);
+}
+
+#sidebar li a {
+    padding: 20px;
+    line-height: 30px;
+    height: auto;
+    display: block;
+    text-decoration: none;
+    color: #FFF;
+    border-left: 3px solid transparent;
+}
+
+#sidebar li a:hover {
+    background-color: rgba(31,27,79,.5);
+}
+
+#sidebar .sidebar-header {
+    padding: 20px;
+    background-color: rgba(31,27,79,1);
+}
+
+#sidebar .navigation-sub {
+    border-left: 20px solid transparent;
+}
+
+#nav-overlay {
+    /* full screen */
+    width: 100vw;
+    height: 100vh;
+    /* transparent black */
+    background: rgba(0,0,0,0.8);
+    position: fixed;
+    top: 0;
+    left: 0;
+    /* middle layer, i.e. appears below the sidebar */
+    z-index: 50;
+}
+
+#sidebar > #dismiss {
+    width: 35px;
+    height: 25px;
+    position: absolute;
+    /* top right corner of the sidebar */
+    top: 10px;
+    right: 10px;
+    background-color: #262262;
+    cursor: pointer;
+    padding-left: 10px;
+}
+
+#sidebar.ng-enter, #sidebar.ng-leave {
+    transition:0.5s linear left;
+}
+
+#sidebar.ng-enter, #sidebar.ng-leave.ng-leave-active {
+    left: -255px;
+}
+
+#sidebar.ng-enter.ng-enter-active, #sidebar.ng-leave {
+    left: 0;
+}
+
+#nav-overlay.ng-enter, #nav-overlay.ng-leave {
+    transition:0.2s ease opacity;
+}
+
+#nav-overlay.ng-enter, #nav-overlay.ng-leave.ng-leave-active {
+    opacity: 0;
+}
+
+#nav-overlay.ng-leave, #nav-overlay.ng-enter.ng-enter-active {
+    opacity: 1;
+}

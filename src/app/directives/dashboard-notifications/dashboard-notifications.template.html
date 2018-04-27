@@ -1,0 +1,9 @@
+<growl-notifications></growl-notifications>
+
+<div id="dashboard-notifications" ng-controller="dashboardNotificationsCtrl as notificationControl">
+    <div ng-repeat="notification in notificationControl.notifications track by notification.id">
+        <growl-notification class="alert alert-{{notification.notificationType}}" role="alert">
+            {{notification.notification}}
+        </growl-notification>
+    </div>
+</div>

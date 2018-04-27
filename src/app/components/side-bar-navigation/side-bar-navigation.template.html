@@ -1,21 +1,20 @@
-<nav id="sidebar" ng-style="$ctrl.sidebarPosition">
+<nav id="sidebar" ng-if="$ctrl.isOpen">
     <div id="dismiss" ng-click="$ctrl.closeSidebar()">
         <i class="fa fa-arrow-left"></i>
     </div>
 
     <div class="sidebar-header">
-        <h3>Navigation</h3>
+        <h3>Dashboard</h3>
     </div>
 
-    <ul class="list-unstyled">
-        <li class="active"><a href="/">Home</a></li>
+    <ul id="navigation-root" class="list-unstyled">
         <li>
-            <a href="#deploymentMenu" data-toggle="collapse">DEPLOYMENTS</a>
-            <ul class="collapse list-unstyled" id="deploymentMenu">
+            <a href="#deploymentMenu" data-toggle="collapse">Deployments</a>
+            <ul class="collapse list-unstyled navigation-sub" id="deploymentMenu">
                 <li><a href="/deployments/canary">Canary</a></li>
             </ul>
         </li>
     </ul>
 </nav>
 
-<div class="nav-overlay"></div>
+<div id="nav-overlay" ng-if="$ctrl.isOpen" ng-click="$ctrl.closeSidebar()"></div>
