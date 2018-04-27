@@ -14,7 +14,8 @@ import contentModal from './directives/content-modal/content-modal.directive';
 import sideBarNavigation from './components/side-bar-navigation/side-bar-navigation.component';
 import deployGauge from './components/deploy-gauge/deploy-gauge.component';
 import deployModal from './components/deploy-modal/deploy-modal.component';
-import dashboardNotifications from './directives/dashboard-notifications/dashboard-notifications.controller';
+import dashboardNotificationsController from './directives/dashboard-notifications/dashboard-notifications.controller';
+import dashboardNotificationsDirective from './directives/dashboard-notifications/dashboard-notifications.directive';
 import notificationService from './services/notification-service/notification-service';
 
 let app = () => {
@@ -74,7 +75,8 @@ angular.module(MODULE_NAME, [ "ngAnimate",
     deployModal,
     contentModal,
     sideBarNavigation,
-    dashboardNotifications,
+    dashboardNotificationsController,
+    dashboardNotificationsDirective,
     notificationService])
     .directive('app', app)
     .controller('AppCtrl', ['notificationService', AppCtrl]);
