@@ -1,7 +1,0 @@
-<main>
-    <side-bar-navigation is-open="app.isOpen" on-close="app.setNavState(newState)"></side-bar-navigation>
-    <div id="open-sidebar" ng-click="app.openNav()" ng-if="!app.isOpen"><i class="fa fa-bars"></i></div>
-    <div id="notification-demo" ng-click="app.notify('You requested a notification!')"><i class="fa fa-exclamation"></i></div>
-
-    <dashboard-notifications notification-queue="app.dashboardNotifications"></dashboard-notifications>
-</main>

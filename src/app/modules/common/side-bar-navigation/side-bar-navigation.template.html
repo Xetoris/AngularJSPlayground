@@ -9,9 +9,12 @@
 
     <ul id="navigation-root" class="list-unstyled">
         <li>
+            <a ui-sref="home" ui-sref-active="active">Home</a>
+        </li>
+        <li>
             <a href="#deploymentMenu" data-toggle="collapse">Deployments</a>
             <ul class="collapse list-unstyled navigation-sub" id="deploymentMenu">
-                <li><a href="/deployments/canary">Canary</a></li>
+                <li><a ui-sref="/deployments/canary" ui-sref-active="active">Canary</a></li>
             </ul>
         </li>
     </ul>
