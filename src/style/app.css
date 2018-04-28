@@ -19,3 +19,23 @@ footer {
 .modal-header {
     font-size: xx-large;
 }
+
+#open-sidebar {
+    position: absolute;
+    top: 10px;
+    left: 0;
+    padding: 10px;
+    min-width: 34px;
+    background-color: grey;
+    cursor: pointer;
+}
+
+#notification-demo {
+    position: absolute;
+    top: 60px;
+    left: 0;
+    padding: 10px;
+    min-width: 34px;
+    background-color: dodgerblue;
+    cursor: pointer;
+}

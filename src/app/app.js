@@ -10,13 +10,13 @@ import 'angularjs-gauge/dist/angularjs-gauge.min.js';
 import 'angular-chart.js/dist/angular-chart.min.js';
 import ngTable from 'ng-table/bundles/ng-table';
 import growlNotifications from 'angular-growl-notifications/dist/angular-growl-notifications.min.js';
-import contentModal from './directives/content-modal/content-modal.directive';
-import sideBarNavigation from './components/side-bar-navigation/side-bar-navigation.component';
-import deployGauge from './components/deploy-gauge/deploy-gauge.component';
-import deployModal from './components/deploy-modal/deploy-modal.component';
-import dashboardNotificationsController from './directives/dashboard-notifications/dashboard-notifications.controller';
-import dashboardNotificationsDirective from './directives/dashboard-notifications/dashboard-notifications.directive';
-import notificationService from './services/notification-service/notification-service';
+import contentModal from './modules/common/content-modal/content-modal.directive';
+import sideBarNavigation from './modules/common/side-bar-navigation/side-bar-navigation.component';
+import deployGauge from './modules/canary/deploy-gauge/deploy-gauge.component';
+import deployModal from './modules/canary/deploy-modal/deploy-modal.component';
+import dashboardNotificationsController from './modules/common/dashboard-notifications/dashboard-notifications.controller';
+import dashboardNotificationsDirective from './modules/common/dashboard-notifications/dashboard-notifications.directive';
+import notificationService from './modules/common/notification-service/notification.service';
 
 let app = () => {
     return {

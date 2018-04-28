@@ -1,10 +1,7 @@
 <main>
     <side-bar-navigation is-open="app.isOpen" on-close="app.setNavState(newState)"></side-bar-navigation>
-    <button type="button" class="btn btn-primary" ng-click="app.openNav()">Navigation</button>
-    <button type="button" class="btn btn-primary" ng-click="app.notify('Test')">Notify</button>
+    <div id="open-sidebar" ng-click="app.openNav()" ng-if="!app.isOpen"><i class="fa fa-bars"></i></div>
+    <div id="notification-demo" ng-click="app.notify('You requested a notification!')"><i class="fa fa-exclamation"></i></div>
 
     <dashboard-notifications notification-queue="app.dashboardNotifications"></dashboard-notifications>
 </main>
-<footer>
-    <a ng-href="{{app.url}}">Webpack Angular Starter</a>
-</footer>

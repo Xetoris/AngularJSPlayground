@@ -1,4 +1,5 @@
 import angular from 'angular';
+import Guid from '../../../utility/guid.js'
 
 class NotificationService {
     constructor() {
@@ -21,15 +22,23 @@ class NotificationService {
         let id = null;
 
         if (notification) {
-            if (!type || this.notificationTypes.indexOf(type.toLowerCase()) < 0) {
-                type = 'info';
+            console.log("Queue Length: " + this.notificationQueue.length);
+            if(this.notificationQueue.length >= 10)
+            {
+                this.notificationQueue.length = 0;
+            }
+
+            let notificationType = (type ? type.toLowerCase().trim() : 'info');
+
+            if (this.notificationTypes.indexOf(notificationType) < 0) {
+                notificationType = 'info';
             }
 
             id = Guid.newGuid();
 
             this.notificationQueue.push({
                 id: id,
-                notificationType: type,
+                notificationType: notificationType,
                 notification: notification
             });
         }
