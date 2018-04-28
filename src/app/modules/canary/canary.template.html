@@ -1,0 +1,18 @@
+<div id="canary-header">
+    <div id="canary-unfocused" ng-if="$ctrl.environment === null">Choose a service!</div>
+    <div id="canary-focused" ng-if="$ctrl.environment != null">
+        <div id="environment-label" class="environment-{{$ctrl.environment}}">
+            {{$ctrl.environment}}
+        </div>
+        <div>
+            <b>Active:</b> {{$ctrl.activeStack.toUpperCase()}} Healthy: {{$ctrl.activeHosts}}
+            <b>Idle:</b> {{$ctrl.inactiveStack.toUpperCase()}} Healthy: {{$ctrl.inactiveHosts}}
+        </div>
+    </div>
+    <div id="canary-documentation-link">
+        <a href="http://www.google.com" target="_blank">
+            <i class="fa fa-book"></i>
+        </a>
+    </div>
+</div>
+<ui-view></ui-view>

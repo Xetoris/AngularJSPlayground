@@ -8,6 +8,12 @@ export const homeState = {
 
 // --- CANARY ---
 
+export const canaryState = {
+    name: 'canary',
+    url: '/canary',
+    component: 'canary'
+};
+
 export const canaryServiceManagerState = {
     name: 'canaryServiceManager',
     url: '/canary',

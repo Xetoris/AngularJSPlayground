@@ -18,9 +18,10 @@ import deployModal from './modules/canary/dashboard/deploy-modal/deploy-modal.co
 import dashboardNotificationsController from './modules/common/dashboard-notifications/dashboard-notifications.controller';
 import dashboardNotificationsDirective from './modules/common/dashboard-notifications/dashboard-notifications.directive';
 import notificationService from './modules/common/notification-service/notification.service';
-import {appState, homeState} from './app.states.js';
+import {homeState, canaryState} from './app.states.js';
 import appComponent from './app.component';
 import homeComponent from './modules/home/home.component';
+import canaryComponent from './modules/canary/canary.component';
 
 const MODULE_NAME = 'my-playground';
 
@@ -38,12 +39,13 @@ angular.module(MODULE_NAME, [ "ngAnimate",
     dashboardNotificationsDirective,
     notificationService,
     appComponent,
-    homeComponent])
+    homeComponent,
+    canaryComponent])
     .config(($stateProvider, $urlRouterProvider) => {
         $urlRouterProvider.otherwise('/home');
 
-        $stateProvider.state(appState);
         $stateProvider.state(homeState);
+        $stateProvider.state(canaryState);
     });
 
 export default MODULE_NAME;

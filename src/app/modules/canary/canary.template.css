@@ -1,0 +1,21 @@
+#canary-header {
+    height: 50px;
+    width: 100%;
+    background-color: white;
+    text-align: center;
+    padding: 10px;
+}
+
+#canary-documentation-link {
+    position: absolute;
+    height: 50px;
+    right: 0;
+    top: 0;
+    opacity: .5;
+    padding: 10px 20px;
+}
+
+#canary-documentation-link:hover {
+    opacity: 1;
+    background-color: whitesmoke;
+}

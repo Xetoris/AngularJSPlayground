@@ -9,12 +9,12 @@
 
     <ul id="navigation-root" class="list-unstyled">
         <li>
-            <a ui-sref="home" ui-sref-active="active">Home</a>
+            <a ui-sref="home" ui-sref-active="active" ng-click="$ctrl.closeSidebar()">Home</a>
         </li>
         <li>
             <a href="#deploymentMenu" data-toggle="collapse">Deployments</a>
             <ul class="collapse list-unstyled navigation-sub" id="deploymentMenu">
-                <li><a ui-sref="/deployments/canary" ui-sref-active="active">Canary</a></li>
+                <li><a ui-sref="canary" ui-sref-active="active" ng-click="$ctrl.closeSidebar()">Canary</a></li>
             </ul>
         </li>
     </ul>
